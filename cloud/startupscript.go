@@ -24,7 +24,7 @@ var prekVersions = map[string]string{
 	"1.8.0":  "1.8.0",
 	"1.9.0":  "1.9.0",
 	"1.10.0": "1.10.0",
-	"1.11.0": "k-1.11",
+	"1.11.0": "0.1.0-alpha.14",
 }
 
 type TemplateData struct {

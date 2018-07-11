@@ -140,6 +140,9 @@ EOF
 {{ define "prepare-host" }}
 HOSTNAME=$(pre-k linode hostname -k {{ .ClusterName }})
 hostnamectl set-hostname $HOSTNAME
+# ref: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=769356
+# ref: https://github.com/kubernetes/kubernetes/blob/82c986ecbcdf99a87cd12a7e2cf64f90057b9acd/cmd/kubeadm/app/preflight/checks.go#L927
+touch /lib/modules/$(uname -r)/modules.builtin
 {{ end }}
 
 {{ define "install-storage-plugin" }}
